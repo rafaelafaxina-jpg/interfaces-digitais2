@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Meu Blog</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #071b3d;
+      color: white;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: 40px auto;
+    }
+
+    /* PARTE DE CIMA */
+
+    .hero {
+      text-align: center;
+      background-color: #071b3d;
+      color: white;
+      padding: 30px 20px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid white;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      color: white;
+    }
+
+    .hero p {
+      margin: 0;
+      color: white;
+      font-size: 16px;
+    }
+
+    /* POSTS */
+
+    .posts {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .post {
+      display: flex;
+      gap: 15px;
+      background-color: #0b2855;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid white;
+    }
+
+    .icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      flex: 0 0 45px;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .content h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      color: white;
+    }
+
+    .author {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .description {
+      margin: 0 0 15px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: white;
+    }
+
+    /* BOTÕES */
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .actions button {
+      border: 1px solid white;
+      background-color: white;
+      color: #071b3d;
+      padding: 8px 13px;
+      cursor: pointer;
+      font-size: 15px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .actions button:hover {
+      background-color: #dce7f5;
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        margin: 20px auto;
+      }
+
+      .post {
+        padding: 15px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <section class="hero">
+
+      <h1>Meu Blog</h1>
+
+      <p>
+        Um espaço para compartilhar ideias,
+        aprendizados e curiosidades.
+      </p>
+
+    </section>
+
+
+    <section class="posts">
+
+
+      <!-- PRIMEIRO POST -->
+
+      <article class="post">
+
+        <div class="icon">🧑‍💻</div>
+
+        <div class="content">
+
+          <h2>Meu primeiro post</h2>
+
+          <p class="author">
+            Por: Nome Sobrenome
+          </p>
+
+          <p class="description">
+            Bem-vindo ao meu novo blog! Aqui vou
+            compartilhar dicas de programação e
+            curiosidades da área de tecnologia.
+          </p>
+
+          <div class="actions">
+
+            <button onclick="likePost(this)">
+              👍 Like: <span>0</span>
+            </button>
+
+            <button onclick="dislikePost(this)">
+              👎 Dislike: <span>0</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SEGUNDO POST -->
+
+      <article class="post">
+
+        <div class="icon">🧑‍💻</div>
+
+        <div class="content">
+
+          <h2>Meu segundo post</h2>
+
+          <p class="author">
+            Por: Nome Sobrenome
+          </p>
+
+          <p class="description">
+            Bem-vindo ao meu novo blog! Aqui vou
+            compartilhar dicas de programação e
+            curiosidades da área de tecnologia.
+          </p>
+
+          <div class="actions">
+
+            <button onclick="likePost(this)">
+              👍 Like: <span>0</span>
+            </button>
+
+            <button onclick="dislikePost(this)">
+              👎 Dislike: <span>0</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    function likePost(button) {
+
+      const numero =
+        button.querySelector("span");
+
+      numero.textContent =
+        Number(numero.textContent) + 1;
+
+    }
+
+
+    function dislikePost(button) {
+
+      const numero =
+        button.querySelector("span");
+
+      numero.textContent =
+        Number(numero.textContent) + 1;
+
+    }
+
+  </script>
+
+</body>
+</html>
+
